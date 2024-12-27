@@ -1,0 +1,177 @@
+<!-- settings.component.html -->
+<div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="logo">Inventor.io</div>
+      <nav>
+        <a routerLink="/dashboard" class="nav-item">
+          <i class="fas fa-home"></i>
+          Home
+        </a>
+        <a routerLink="/products" class="nav-item">
+          <i class="fas fa-box"></i>
+          Products
+        </a>
+        <a routerLink="/categories" class="nav-item">
+          <i class="fas fa-list"></i>
+          Categories
+        </a>
+        <a routerLink="/stores" class="nav-item">
+          <i class="fas fa-store"></i>
+          Stores
+        </a>
+        <a routerLink="/finances" class="nav-item">
+          <i class="fas fa-chart-line"></i>
+          Finances
+        </a>
+        <a routerLink="/settings" class="nav-item active">
+          <i class="fas fa-cog"></i>
+          Settings
+        </a>
+      </nav>
+      <div class="bottom-nav">
+        <a routerLink="/add-product" class="nav-item">
+          <i class="fas fa-plus"></i>
+          Add product
+        </a>
+        <a routerLink="/logout" class="nav-item">
+          <i class="fas fa-sign-out-alt"></i>
+          Log out
+        </a>
+      </div>
+    </aside>
+  
+    <main class="main-content">
+      <header class="header">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search">
+        </div>
+        <div class="header-icons">
+          <button routerLink="/add-product" class="icon-button">
+            <i class="fas fa-plus"></i>
+          </button>
+          <button class="icon-button">
+            <i class="fas fa-question-circle"></i>
+          </button>
+          <button class="icon-button">
+            <i class="fas fa-bell"></i>
+            <span class="notification-badge"></span>
+          </button>
+          <button class="icon-button">
+            <i class="fas fa-user-circle"></i>
+          </button>
+        </div>
+      </header>
+  
+      <div class="settings-container">
+        <h2 class="settings-title">Settings</h2>
+        
+        <div class="settings-grid">
+          <!-- Account Settings -->
+          <section class="settings-section">
+            <h3 class="section-title">Account Settings</h3>
+            <div class="settings-form">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" value="John Smith" class="form-input">
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" value="john.smith@example.com" class="form-input">
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" value="+44 123 456 7890" class="form-input">
+              </div>
+              <button class="save-button">Save Changes</button>
+            </div>
+          </section>
+  
+          <!-- Notification Settings -->
+          <section class="settings-section">
+            <h3 class="section-title">Notification Preferences</h3>
+            <div class="settings-list">
+              <div class="settings-item">
+                <div>
+                  <h4>Email Notifications</h4>
+                  <p class="text-muted">Receive updates about your orders and inventory</p>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="settings-item">
+                <div>
+                  <h4>Low Stock Alerts</h4>
+                  <p class="text-muted">Get notified when items are running low</p>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="settings-item">
+                <div>
+                  <h4>Order Updates</h4>
+                  <p class="text-muted">Receive notifications for new orders</p>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </section>
+  
+          <!-- Store Settings -->
+          <section class="settings-section">
+            <h3 class="section-title">Store Settings</h3>
+            <div class="settings-form">
+              <div class="form-group">
+                <label>Default Currency</label>
+                <select class="form-input">
+                  <option>INR (₹)</option>
+                  <option>USD ($)</option>
+                  <option>EUR (€)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Time Zone</label>
+                <select class="form-input">
+                  <option>London (GMT+0)</option>
+                  <option>Paris (GMT+1)</option>
+                  <option>New York (GMT-5)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Low Stock Threshold</label>
+                <input type="number" value="10" class="form-input">
+              </div>
+              <button class="save-button">Save Changes</button>
+            </div>
+          </section>
+  
+          <!-- Security Settings -->
+          <section class="settings-section">
+            <h3 class="section-title">Security</h3>
+            <div class="settings-form">
+              <div class="form-group">
+                <label>Current Password</label>
+                <input type="password" placeholder="••••••••" class="form-input">
+              </div>
+              <div class="form-group">
+                <label>New Password</label>
+                <input type="password" placeholder="••••••••" class="form-input">
+              </div>
+              <div class="form-group">
+                <label>Confirm New Password</label>
+                <input type="password" placeholder="••••••••" class="form-input">
+              </div>
+              <button class="save-button">Update Password</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>

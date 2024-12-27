@@ -1,0 +1,65 @@
+<div class="page-container">
+    <aside class="sidebar">
+      <div class="logo">Inventor.io</div>
+      <nav>
+        <a routerLink="/dashboard" class="nav-item">
+          <i class="fas fa-home"></i>
+          Home
+        </a>
+        <a routerLink="/products" class="nav-item">
+          <i class="fas fa-box"></i>
+          Products
+        </a>
+        <a routerLink="/categories" class="nav-item">
+          <i class="fas fa-list"></i>
+          Categories
+        </a>
+        <a routerLink="/stores" class="nav-item">
+          <i class="fas fa-store"></i>
+          Stores
+        </a>
+        <a routerLink="/finances" class="nav-item">
+          <i class="fas fa-chart-line"></i>
+          Finances
+        </a>
+        <a routerLink="/settings" class="nav-item">
+          <i class="fas fa-cog"></i>
+          Settings
+        </a>
+      </nav>
+      <div class="bottom-nav">
+        <a class="nav-item active">
+          <i class="fas fa-sign-out-alt"></i>
+          Log out
+        </a>
+      </div>
+    </aside>
+  
+    <main class="main-content">
+      <header class="header">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search">
+        </div>
+        <div class="header-icons">
+          <button class="icon-button">
+            <i class="fas fa-question-circle"></i>
+          </button>
+          <button class="icon-button">
+            <i class="fas fa-bell"></i>
+          </button>
+          <button class="icon-button">
+            <i class="fas fa-user-circle"></i>
+          </button>
+        </div>
+      </header>
+  
+      <h1 class="page-title">Are you sure you want to log out?</h1>
+  
+      <div class="logout-actions">
+        <button (click)="onLogout()" class="logout-button">Yes, Log Out</button>
+        <button routerLink="/dashboard" class="cancel-button">Cancel</button>
+      </div>
+    </main>
+  </div>
+  

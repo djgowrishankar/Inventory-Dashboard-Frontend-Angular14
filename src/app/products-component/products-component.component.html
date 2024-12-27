@@ -1,0 +1,142 @@
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="logo">Inventor.io</div>
+    <nav>
+      <a routerLink="/dashboard" class="nav-item">
+        <i class="fas fa-home"></i>
+        Home
+      </a>
+      <a routerLink="/products" class="nav-item active">
+        <i class="fas fa-box"></i>
+        Products
+      </a>
+      <a routerLink="/categories" class="nav-item">
+        <i class="fas fa-list"></i>
+        Categories
+      </a>
+      <a routerLink="/stores" class="nav-item">
+        <i class="fas fa-store"></i>
+        Stores
+      </a>
+      <a routerLink="/finances" class="nav-item">
+        <i class="fas fa-chart-line"></i>
+        Finances
+      </a>
+      <a routerLink="/settings" class="nav-item">
+        <i class="fas fa-cog"></i>
+        Settings
+      </a>
+    </nav>
+    <div class="bottom-nav">
+      <a routerLink="/add-product" class="nav-item">
+        <i class="fas fa-plus"></i>
+        Add product
+      </a>
+      <a routerLink="/logout" class="nav-item">
+        <i class="fas fa-sign-out-alt"></i>
+        Log out
+      </a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="header">
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search">
+      </div>
+      <div class="header-icons">
+        <button routerLink="/add-product" class="icon-button">
+          <i class="fas fa-plus"></i>
+        </button>
+        <button class="icon-button">
+          <i class="fas fa-bell"></i>
+          <span class="notification-badge"></span>
+        </button>
+        <button class="icon-button">
+          <i class="fas fa-cog"></i>
+        </button>
+        <button class="icon-button">
+          <i class="fas fa-user-circle"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="dashboard-grid">
+      <!-- Metrics Cards -->
+      <div class="metrics-cards">
+        <div class="metric-card">
+          <div class="metric-icon">
+            <i class="fas fa-box"></i>
+          </div>
+          <div class="metric-content">
+            <h3>Total Products</h3>
+            <p>{{productMetrics.totalProducts}}</p>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon active">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div class="metric-content">
+            <h3>Active Products</h3>
+            <p>{{productMetrics.activeProducts}}</p>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon warning">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="metric-content">
+            <h3>Low Stock</h3>
+            <p>{{productMetrics.lowStock}}</p>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon danger">
+            <i class="fas fa-times-circle"></i>
+          </div>
+          <div class="metric-content">
+            <h3>Out of Stock</h3>
+            <p>{{productMetrics.outOfStock}}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Section -->
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h2>Product Sales Trend</h2>
+          <canvas id="productSalesChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h2>Category Distribution</h2>
+          <canvas id="categoryDistribution"></canvas>
+        </div>
+      </div>
+
+      <!-- Top Products Table -->
+      <div class="table-card">
+        <h2>Top Performing Products</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Total Sales</th>
+              <th>Revenue</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of topProducts">
+              <td>{{product.name}}</td>
+              <td>{{product.sales}}</td>
+              <td>${{product.revenue.toLocaleString()}}</td>
+              <td><span class="status-badge">Active</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>

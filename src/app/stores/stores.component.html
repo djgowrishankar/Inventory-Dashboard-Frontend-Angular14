@@ -1,0 +1,131 @@
+<div class="page-container">
+    <aside class="sidebar">
+      <div class="logo">Inventor.io</div>
+      <nav>
+        <a routerLink="/dashboard" class="nav-item">
+          <i class="fas fa-home"></i>
+          Home
+        </a>
+        <a routerLink="/products" class="nav-item">
+          <i class="fas fa-box"></i>
+          Products
+        </a>
+        <a routerLink="/categories" class="nav-item">
+          <i class="fas fa-list"></i>
+          Categories
+        </a>
+        <a class="nav-item active">
+          <i class="fas fa-store"></i>
+          Stores
+        </a>
+        <a routerLink="/finances" class="nav-item">
+          <i class="fas fa-chart-line"></i>
+          Finances
+        </a>
+        <a routerLink="/settings" class="nav-item">
+          <i class="fas fa-cog"></i>
+          Settings
+        </a>
+      </nav>
+      <div class="bottom-nav">
+        <a routerLink="/add-product" class="nav-item">
+          <i class="fas fa-plus"></i>
+          Add Product
+        </a>
+        <a routerLink="/logout" class="nav-item">
+          <i class="fas fa-sign-out-alt"></i>
+          Log out
+        </a>
+      </div>
+    </aside>
+  
+    <main class="main-content">
+      <header class="header">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search">
+        </div>
+        <div class="header-icons">
+          <button routerLink="/add-product" class="icon-button">
+            <i class="fas fa-plus"></i>
+          </button>
+          <button class="icon-button">
+            <i class="fas fa-bell"></i>
+            <span class="notification-badge"></span>
+          </button>
+          <button class="icon-button">
+            <i class="fas fa-cog"></i>
+          </button>
+          <button class="icon-button">
+            <i class="fas fa-user-circle"></i>
+          </button>
+        </div>
+      </header>
+  
+      <div class="dashboard-grid">
+        <!-- Metrics Cards -->
+        <div class="metrics-cards">
+          <div class="metric-card">
+            <div class="metric-icon">
+              <i class="fas fa-store"></i>
+            </div>
+            <div class="metric-content">
+              <h3>Total Stores</h3>
+              <p>{{storeMetrics.totalStores}}</p>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon active">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="metric-content">
+              <h3>Active Stores</h3>
+              <p>{{storeMetrics.activeStores}}</p>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon warning">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="metric-content">
+              <h3>Total Orders</h3>
+              <p>{{storeMetrics.totalOrders}}</p>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <div class="metric-content">
+              <h3>Total Revenue</h3>
+              <p>${{storeMetrics.totalRevenue.toLocaleString()}}</p>
+            </div>
+          </div>
+        </div>
+  
+  
+        <!-- Top Stores Table -->
+        <div class="table-card">
+          <h2>Top Performing Stores</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Store Name</th>
+                <th>Total Orders</th>
+                <th>Revenue</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let store of topStores">
+                <td>{{store.name}}</td>
+                <td>{{store.orders}}</td>
+                <td>${{store.revenue.toLocaleString()}}</td>
+                <td><span class="status-badge">{{store.status}}</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
